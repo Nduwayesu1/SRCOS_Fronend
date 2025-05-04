@@ -27,17 +27,6 @@
         .gallery-item:hover {
             transform: scale(1.05);
         }
-
-        /* Change color of hamburger icon for better visibility */
-        #menu-toggle i {
-            color: #333; /* Dark color for visibility */
-        }
-
-        /* Ensure images scale properly for mobile */
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-        }
     </style>
 </head>
 <body class="bg-gray-200 text-gray-800 font-sans">
@@ -46,33 +35,16 @@
 <header class="bg-green-600 text-white">
     <div class="container mx-auto px-4 py-6 flex justify-between items-center">
         <h1 class="text-2xl font-bold">Polymam Clinic</h1>
-        <div class="lg:hidden">
-            <button id="menu-toggle" class="text-white">
-                <i class="fas fa-bars"></i> <!-- Hamburger Icon -->
-            </button>
-        </div>
-        <nav class="hidden lg:block" id="nav-menu">
+        <nav>
             <ul class="flex space-x-6">
                 <li><a href="#about" class="hover:text-yellow-300">About</a></li>
                 <li><a href="#contact" class="hover:text-yellow-300">Contact</a></li>
                 <li><a href="#services" class="hover:text-yellow-300">Clinic Services</a></li>
-                <li><a href="#news" class="hover:text-yellow-300">News</a></li>
-                <li><a href="#education" class="hover:text-yellow-300">Education</a></li>
+                <li><a href="#contact" class="hover:text-yellow-300">News</a></li>
+                <li><a href="#contact" class="hover:text-yellow-300">Education</a></li>
                 <li><a href="#portal" class="hover:text-yellow-300 font-semibold">Patient Portal</a></li>
             </ul>
         </nav>
-    </div>
-
-    <!-- Mobile Menu (Hidden by default) -->
-    <div class="lg:hidden hidden" id="mobile-menu">
-        <ul class="space-y-4 p-4">
-            <li><a href="#about" class="block hover:text-yellow-300">About</a></li>
-            <li><a href="#contact" class="block hover:text-yellow-300">Contact</a></li>
-            <li><a href="#services" class="block hover:text-yellow-300">Clinic Services</a></li>
-            <li><a href="#news" class="block hover:text-yellow-300">News</a></li>
-            <li><a href="#education" class="block hover:text-yellow-300">Education</a></li>
-            <li><a href="#portal" class="block hover:text-yellow-300 font-semibold">Patient Portal</a></li>
-        </ul>
     </div>
 </header>
 
@@ -190,14 +162,6 @@
 
 <!-- Add FontAwesome for icons -->
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
-<script>
-    // JavaScript to toggle mobile menu visibility
-    document.getElementById('menu-toggle').addEventListener('click', function() {
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenu.classList.toggle('hidden');
-    });
-</script>
 
 </body>
 </html>
