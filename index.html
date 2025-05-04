@@ -6,16 +6,24 @@
     <title>Polymam Clinic</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
+        /* Simple fade-in animation for images */
         .fade-in {
             animation: fadeIn 3s ease-in-out infinite;
         }
 
         @keyframes fadeIn {
-            0% { opacity: 0; }
-            50% { opacity: 1; }
-            100% { opacity: 0; }
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
         }
 
+        /* Hover scale effect */
         .gallery-item:hover {
             transform: scale(1.05);
         }
@@ -27,7 +35,12 @@
 <header class="bg-green-600 text-white">
     <div class="container mx-auto px-4 py-6 flex justify-between items-center">
         <h1 class="text-2xl font-bold">Polymam Clinic</h1>
-        <nav>
+        <div class="lg:hidden">
+            <button id="menu-toggle" class="text-white">
+                <i class="fas fa-bars"></i> <!-- Hamburger Icon -->
+            </button>
+        </div>
+        <nav class="hidden lg:block" id="nav-menu">
             <ul class="flex space-x-6">
                 <li><a href="#about" class="hover:text-yellow-300">About</a></li>
                 <li><a href="#contact" class="hover:text-yellow-300">Contact</a></li>
@@ -37,6 +50,18 @@
                 <li><a href="#portal" class="hover:text-yellow-300 font-semibold">Patient Portal</a></li>
             </ul>
         </nav>
+    </div>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div class="lg:hidden hidden" id="mobile-menu">
+        <ul class="space-y-4 p-4">
+            <li><a href="#about" class="block hover:text-yellow-300">About</a></li>
+            <li><a href="#contact" class="block hover:text-yellow-300">Contact</a></li>
+            <li><a href="#services" class="block hover:text-yellow-300">Clinic Services</a></li>
+            <li><a href="#news" class="block hover:text-yellow-300">News</a></li>
+            <li><a href="#education" class="block hover:text-yellow-300">Education</a></li>
+            <li><a href="#portal" class="block hover:text-yellow-300 font-semibold">Patient Portal</a></li>
+        </ul>
     </div>
 </header>
 
@@ -54,14 +79,19 @@
     <div class="container mx-auto px-4 text-center">
         <h3 class="text-3xl font-bold text-green-600 mb-10">Our Clinic Gallery</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <!-- Image 1 -->
             <div class="gallery-item bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                <img src="images/Image1.png" alt="Clinic Image 1" class="w-full h-56 object-cover rounded-md fade-in">
+                <img src=".../../images/Image1.png" alt="Clinic Image 1" class="w-full h-56 object-cover rounded-md fade-in">
             </div>
+
+            <!-- Image 2 -->
             <div class="gallery-item bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                <img src="images/Image2.png" alt="Clinic Image 2" class="w-full h-56 object-cover rounded-md fade-in">
+                <img src=".../../images/Image2.png" alt="Clinic Image 2" class="w-full h-56 object-cover rounded-md fade-in">
             </div>
+
+            <!-- Image 3 -->
             <div class="gallery-item bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                <img src="images/Image3.png" alt="Clinic Image 3" class="w-full h-56 object-cover rounded-md fade-in">
+                <img src=".../../images/Image3.png" alt="Clinic Image 3" class="w-full h-56 object-cover rounded-md fade-in">
             </div>
         </div>
     </div>
@@ -111,54 +141,34 @@
     </div>
 </section>
 
-<!-- News -->
-<section id="news" class="py-16 bg-gray-100 text-center">
-    <div class="container mx-auto px-4">
-        <h3 class="text-3xl font-bold text-green-600 mb-6">Latest News</h3>
-        <p>Stay tuned for health tips, clinic updates, and community outreach activities.</p>
-    </div>
-</section>
-
-<!-- Education -->
-<section id="education" class="py-16 bg-white text-center">
-    <div class="container mx-auto px-4">
-        <h3 class="text-3xl font-bold text-green-600 mb-6">Health Education</h3>
-        <p>Access our library of educational resources to learn how to live a healthier life.</p>
-    </div>
-</section>
-
-<!-- Patient Portal -->
-<section id="portal" class="py-16 bg-gray-200 text-center">
-    <div class="container mx-auto px-4">
-        <h3 class="text-3xl font-bold text-green-600 mb-6">Patient Portal</h3>
-        <p>Login to access your medical records, appointment history, and personalized care.</p>
-        <a href="#" class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-500">Go to Portal</a>
-    </div>
-</section>
-
-<!-- Footer -->
 <footer class="bg-green-600 text-white py-8 mt-10 text-center">
     <div class="container mx-auto px-4 mb-4">
         <h4 class="text-xl font-bold mb-4">Connect with Us</h4>
         <div class="flex justify-center space-x-6">
+            <!-- Phone Call Link -->
             <a href="tel:+250784161745" class="text-white hover:text-yellow-300">
                 <i class="fas fa-phone-alt"></i> Phone
             </a>
+            <!-- WhatsApp Link -->
             <a href="https://wa.me/+250789519876" class="text-white hover:text-yellow-300">
                 <i class="fab fa-whatsapp"></i> WhatsApp
             </a>
+            <!-- Facebook Link -->
             <a href="https://www.facebook.com/PolymamClinic" class="text-white hover:text-yellow-300">
                 <i class="fab fa-facebook"></i> Facebook
             </a>
+            <!-- LinkedIn Link -->
             <a href="https://www.linkedin.com/company/polymam-clinic" class="text-white hover:text-yellow-300">
                 <i class="fab fa-linkedin"></i> LinkedIn
             </a>
+            <!-- Twitter Link -->
             <a href="https://twitter.com/PolymamClinic" class="text-white hover:text-yellow-300">
                 <i class="fab fa-twitter"></i> Twitter
             </a>
         </div>
     </div>
 
+    <!-- Google Map Embed -->
     <div class="container mx-auto px-4 mt-4">
         <h4 class="text-xl font-bold mb-4">Find Us</h4>
         <iframe class="w-full h-64 rounded-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.482147864149!2d30.108938109852602!3d-1.9608063980131742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca654c3d4438f%3A0x2df51ad8df88f5d2!2sIvuriro%20Polyfam!5e0!3m2!1sen!2srw!4v1746346054636!5m2!1sen!2srw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -167,8 +177,16 @@
     <p class="mt-4">&copy; 2025 Polymam Clinic. All rights reserved.</p>
 </footer>
 
-<!-- FontAwesome Icons -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<!-- Add FontAwesome for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+<script>
+    // JavaScript to toggle mobile menu visibility
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
 
 </body>
 </html>
