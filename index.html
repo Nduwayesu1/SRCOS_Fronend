@@ -190,18 +190,9 @@
     // Toggle mobile menu visibility
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    const mobileMenuItems = mobileMenu.querySelectorAll('a');
 
-    // Toggle the mobile menu on hamburger button click
     hamburgerBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
-    });
-
-    // Hide mobile menu after a menu item is clicked
-    mobileMenuItems.forEach(item => {
-        item.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-        });
     });
 </script>
 
