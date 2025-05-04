@@ -1,199 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Polyfam Clinic</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        /* Simple fade-in animation for images */
-        .fade-in {
-            animation: fadeIn 3s ease-in-out infinite;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Polyfam Clinic</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    .fade-in {
+      animation: fadeIn 3s ease-in-out infinite;
+    }
 
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      50% { opacity: 1; }
+      100% { opacity: 0; }
+    }
 
-        /* Hover scale effect */
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-    </style>
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body class="bg-gray-200 text-gray-800 font-sans">
 
 <!-- Header -->
 <header class="bg-green-600 text-white">
-    <div class="container mx-auto px-4 py-6 flex justify-between items-center">
-        <h1 class="text-2xl font-bold">Polyfam Clinic</h1>
-        
-        <!-- Hamburger Menu for Mobile -->
-        <div class="block lg:hidden">
-            <button id="hamburger-btn" class="text-white focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-        </div>
-
-        <!-- Navigation Menu -->
-        <nav class="hidden lg:block">
-            <ul class="flex space-x-6">
-                <li><a href="#about" class="hover:text-yellow-300">About</a></li>
-                <li><a href="#contact" class="hover:text-yellow-300">Contact</a></li>
-                <li><a href="#services" class="hover:text-yellow-300">Clinic Services</a></li>
-                <li><a href="#contact" class="hover:text-yellow-300">News</a></li>
-                <li><a href="#contact" class="hover:text-yellow-300">Education</a></li>
-                <li><a href="#portal" class="hover:text-yellow-300 font-semibold">Patient Portal</a></li>
-            </ul>
-        </nav>
-
-        <!-- Mobile Menu (hidden by default) -->
-        <nav id="mobile-menu" class="lg:hidden hidden absolute top-16 left-0 right-0 bg-green-600 text-white py-4 px-6">
-            <ul class="space-y-4">
-                <li><a href="#about" class="block hover:text-yellow-300">About</a></li>
-                <li><a href="#contact" class="block hover:text-yellow-300">Contact</a></li>
-                <li><a href="#services" class="block hover:text-yellow-300">Clinic Services</a></li>
-                <li><a href="#contact" class="block hover:text-yellow-300">News</a></li>
-                <li><a href="#contact" class="block hover:text-yellow-300">Education</a></li>
-                <li><a href="#portal" class="block hover:text-yellow-300 font-semibold">Patient Portal</a></li>
-            </ul>
-        </nav>
+  <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">Polyfam Clinic</h1>
+    
+    <!-- Hamburger Menu -->
+    <div class="block lg:hidden">
+      <button id="hamburger-btn" aria-label="Toggle Menu" class="text-white focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
     </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden lg:block">
+      <ul class="flex space-x-6">
+        <li><a href="#about" class="hover:text-yellow-300">About</a></li>
+        <li><a href="#contact" class="hover:text-yellow-300">Contact</a></li>
+        <li><a href="#services" class="hover:text-yellow-300">Clinic Services</a></li>
+        <li><a href="#news" class="hover:text-yellow-300">News</a></li>
+        <li><a href="#education" class="hover:text-yellow-300">Education</a></li>
+        <li><a href="#portal" class="hover:text-yellow-300 font-semibold">Patient Portal</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <nav id="mobile-menu" class="lg:hidden hidden bg-green-600 text-white py-4 px-6">
+    <ul class="space-y-4">
+      <li><a href="#about" class="block hover:text-yellow-300">About</a></li>
+      <li><a href="#contact" class="block hover:text-yellow-300">Contact</a></li>
+      <li><a href="#services" class="block hover:text-yellow-300">Clinic Services</a></li>
+      <li><a href="#news" class="block hover:text-yellow-300">News</a></li>
+      <li><a href="#education" class="block hover:text-yellow-300">Education</a></li>
+      <li><a href="#portal" class="block hover:text-yellow-300 font-semibold">Patient Portal</a></li>
+    </ul>
+  </nav>
 </header>
 
 <!-- Hero Section -->
 <section class="bg-green-600 text-white py-20">
-    <div class="container mx-auto px-4 text-center">
-        <h2 class="text-4xl font-bold mb-4">Your Health, Our Priority</h2>
-        <p class="text-lg mb-6">Providing quality and compassionate care for every family member.</p>
-        <a href="#contact" class="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-300">Book an Appointment</a>
-    </div>
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-4xl font-bold mb-4">Your Health, Our Priority</h2>
+    <p class="text-lg mb-6">Providing quality and compassionate care for every family member.</p>
+    <a href="#contact" class="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-300">Book an Appointment</a>
+  </div>
 </section>
 
-<!-- Gallery Section -->
+<!-- Gallery -->
 <section id="gallery" class="py-16 bg-gray-100">
-    <div class="container mx-auto px-4 text-center">
-        <h3 class="text-3xl font-bold text-green-600 mb-10">Our Clinic Gallery</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            <!-- Image 1 -->
-            <div class="gallery-item bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                <img src=".../../images/Image1.png" alt="Clinic Image 1" class="w-full h-56 object-cover rounded-md fade-in">
-            </div>
-
-            <!-- Image 2 -->
-            <div class="gallery-item bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                <img src=".../../images/Image2.png" alt="Clinic Image 2" class="w-full h-56 object-cover rounded-md fade-in">
-            </div>
-
-            <!-- Image 3 -->
-            <div class="gallery-item bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                <img src=".../../images/Image3.png" alt="Clinic Image 3" class="w-full h-56 object-cover rounded-md fade-in">
-            </div>
-        </div>
+  <div class="container mx-auto px-4 text-center">
+    <h3 class="text-3xl font-bold text-green-600 mb-10">Our Clinic Gallery</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div class="gallery-item bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+        <img src="images/Image1.png" alt="Clinic Image 1" class="w-full h-56 object-cover rounded-md fade-in">
+      </div>
+      <div class="gallery-item bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+        <img src="images/Image2.png" alt="Clinic Image 2" class="w-full h-56 object-cover rounded-md fade-in">
+      </div>
+      <div class="gallery-item bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+        <img src="images/Image3.png" alt="Clinic Image 3" class="w-full h-56 object-cover rounded-md fade-in">
+      </div>
     </div>
+  </div>
 </section>
 
 <!-- Services -->
 <section id="services" class="py-16 bg-gray-100">
-    <div class="container mx-auto px-4">
-        <h3 class="text-3xl font-bold text-center text-green-600 mb-10">Our Services</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-lg shadow">
-                <h4 class="text-xl font-semibold text-green-600 mb-2">General Consultation</h4>
-                <p>Expert general practitioners to assist with your everyday health concerns.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow">
-                <h4 class="text-xl font-semibold text-green-600 mb-2">Maternal & Child Health</h4>
-                <p>Comprehensive prenatal, postnatal, and pediatric care for mothers and children.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow">
-                <h4 class="text-xl font-semibold text-green-600 mb-2">Laboratory Services</h4>
-                <p>Accurate and timely diagnostics including blood tests, scans, and more.</p>
-            </div>
-        </div>
+  <div class="container mx-auto px-4">
+    <h3 class="text-3xl font-bold text-center text-green-600 mb-10">Our Services</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h4 class="text-xl font-semibold text-green-600 mb-2">General Consultation</h4>
+        <p>Expert general practitioners to assist with your everyday health concerns.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h4 class="text-xl font-semibold text-green-600 mb-2">Maternal & Child Health</h4>
+        <p>Comprehensive prenatal, postnatal, and pediatric care for mothers and children.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h4 class="text-xl font-semibold text-green-600 mb-2">Laboratory Services</h4>
+        <p>Accurate and timely diagnostics including blood tests, scans, and more.</p>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- About Us -->
+<!-- About -->
 <section id="about" class="py-16 bg-gray-200">
-    <div class="container mx-auto px-4 text-center">
-        <h3 class="text-3xl font-bold text-green-600 mb-6">About Polymam Clinic</h3>
-        <p class="max-w-3xl mx-auto text-lg">
-            Polymam Clinic is a community-driven healthcare center committed to offering accessible, affordable, and high-quality medical services. Our team of specialists works around the clock to ensure your family’s well-being.
-        </p>
-    </div>
+  <div class="container mx-auto px-4 text-center">
+    <h3 class="text-3xl font-bold text-green-600 mb-6">About Polymam Clinic</h3>
+    <p class="max-w-3xl mx-auto text-lg">
+      Polymam Clinic is a community-driven healthcare center committed to offering accessible, affordable, and high-quality medical services. Our team of specialists works around the clock to ensure your family’s well-being.
+    </p>
+  </div>
 </section>
 
 <!-- Contact -->
 <section id="contact" class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-        <h3 class="text-3xl font-bold text-center text-green-600 mb-8">Contact Us</h3>
-        <form class="max-w-xl mx-auto space-y-4">
-            <input type="text" placeholder="Full Name" class="w-full px-4 py-2 border border-gray-300 rounded" />
-            <input type="email" placeholder="Email" class="w-full px-4 py-2 border border-gray-300 rounded" />
-            <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded"></textarea>
-            <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-500">Send Message</button>
-        </form>
-    </div>
+  <div class="container mx-auto px-4">
+    <h3 class="text-3xl font-bold text-center text-green-600 mb-8">Contact Us</h3>
+    <form class="max-w-xl mx-auto space-y-4">
+      <input type="text" placeholder="Full Name" class="w-full px-4 py-2 border border-gray-300 rounded" />
+      <input type="email" placeholder="Email" class="w-full px-4 py-2 border border-gray-300 rounded" />
+      <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded"></textarea>
+      <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-500">Send Message</button>
+    </form>
+  </div>
 </section>
 
+<!-- Footer -->
 <footer class="bg-green-600 text-white py-8 mt-10 text-center">
-    <div class="container mx-auto px-4 mb-4">
-        <h4 class="text-xl font-bold mb-4">Connect with Us</h4>
-        <div class="flex justify-center space-x-6">
-            <!-- Phone Call Link -->
-            <a href="tel:+250784161745" class="text-white hover:text-yellow-300">
-                <i class="fas fa-phone-alt"></i> Phone
-            </a>
-            <!-- WhatsApp Link -->
-            <a href="https://wa.me/+250789519876" class="text-white hover:text-yellow-300">
-                <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
-            <!-- Facebook Link -->
-            <a href="https://www.facebook.com/PolymamClinic" class="text-white hover:text-yellow-300">
-                <i class="fab fa-facebook"></i> Facebook
-            </a>
-            <!-- LinkedIn Link -->
-            <a href="https://www.linkedin.com/company/polymam-clinic" class="text-white hover:text-yellow-300">
-                <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-            <!-- Twitter Link -->
-            <a href="https://twitter.com/PolymamClinic" class="text-white hover:text-yellow-300">
-                <i class="fab fa-twitter"></i> Twitter
-            </a>
-        </div>
+  <div class="container mx-auto px-4 mb-4">
+    <h4 class="text-xl font-bold mb-4">Connect with Us</h4>
+    <div class="flex justify-center space-x-6">
+      <a href="tel:+250784161745" class="text-white hover:text-yellow-300"><i class="fas fa-phone-alt"></i> Phone</a>
+      <a href="https://wa.me/+250789519876" class="text-white hover:text-yellow-300"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="https://www.facebook.com/PolymamClinic" class="text-white hover:text-yellow-300"><i class="fab fa-facebook"></i> Facebook</a>
+      <a href="https://www.linkedin.com/company/polymam-clinic" class="text-white hover:text-yellow-300"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://twitter.com/PolymamClinic" class="text-white hover:text-yellow-300"><i class="fab fa-twitter"></i> Twitter</a>
     </div>
+  </div>
 
-    <!-- Google Map Embed -->
-    <div class="container mx-auto px-4 mt-4">
-        <h4 class="text-xl font-bold mb-4">Find Us</h4>
-        <iframe class="w-full h-64 rounded-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.482147864149!2d30.108938109852602!3d-1.9608063980131742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca654c3d4438f%3A0x2df51ad8df88f5d2!2sIvuriro%20Polyfam!5e0!3m2!1sen!2srw!4v1746346054636!5m2!1sen!2srw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-
-    <p class="mt-4">&copy; 2025 Polymam Clinic. All rights reserved.</p>
+  <div class="container mx-auto px-4 mt-4">
+    <h4 class="text-xl font-bold mb-4">Find Us</h4>
+    <iframe class="w-full h-64 rounded-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.482147864149!2d30.108938109852602!3d-1.9608063980131742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca654c3d4438f%3A0x2df51ad8df88f5d2!2sIvuriro%20Polyfam!5e0!3m2!1sen!2srw!4v1746346054636!5m2!1sen!2srw" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
 </footer>
 
-<!-- Add FontAwesome for icons -->
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
 <script>
-    // Toggle mobile menu visibility
-    const hamburgerBtn = document.getElementById('hamburger-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    hamburgerBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
+  document.getElementById('hamburger-btn').addEventListener('click', function () {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+  });
 </script>
 
 </body>
